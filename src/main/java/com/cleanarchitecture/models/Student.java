@@ -1,7 +1,8 @@
 package com.cleanarchitecture.models;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
@@ -9,7 +10,8 @@ import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
+@Data
+@Builder
 public class Student {
 
     private CPF cpf;
@@ -17,10 +19,12 @@ public class Student {
     private Email email;
     private List<Phone> phones = new ArrayList<>();
 
-    public void addNumber(String ddd, String number) {
-        this.phones.add(new Phone(ddd, number));
+    public void addPhone(Phone phone) {
+        if (phones == null) {
+            phones = new ArrayList<>();
+        }
+        phones.add(phone);
     }
-
 }
 
 
