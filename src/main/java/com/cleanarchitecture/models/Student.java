@@ -1,0 +1,30 @@
+package com.cleanarchitecture.models;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+public class Student {
+
+    private CPF cpf;
+    private String name;
+    private Email email;
+    private List<Phone> phones = new ArrayList<>();
+
+    public void addNumber(String ddd, String number) {
+        this.phones.add(new Phone(ddd, number));
+    }
+
+}
+
+
+
+
+
+
