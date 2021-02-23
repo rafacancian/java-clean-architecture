@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "b42a4a15-8fdd-463d-ac72-b7b4b3424875",
+		"name": "CleanArchitecture",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Students",
+			"item": []
+		},
+		{
+			"name": "findAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/students",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Rafel Cancian\",\r\n    \"cpf\":\"123.123.123-23\",\r\n    \"email\":\"rafael.student@example.com\",\r\n    \"phones\":[\r\n        {\r\n            \"ddd\":\"19\",\r\n            \"number\":\"11223344\"\r\n        },\r\n        {\r\n            \"ddd\":\"35\",\r\n            \"number\":\"33445566\"\r\n        }\r\n    ]\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/students",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
