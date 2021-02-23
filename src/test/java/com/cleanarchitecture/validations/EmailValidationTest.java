@@ -1,13 +1,11 @@
-package com.cleanarchitecture.models;
+package com.cleanarchitecture.validations;
 
-import com.cleanarchitecture.validations.CpfValidation;
-import com.cleanarchitecture.validations.EmailValidation;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class EmailTest {
+class EmailValidationTest {
 
     @Test
     void shouldNotCreateEmailWithInvalidAddress() {

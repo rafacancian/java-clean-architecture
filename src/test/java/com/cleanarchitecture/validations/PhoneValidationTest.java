@@ -1,4 +1,4 @@
-package com.cleanarchitecture.models;
+package com.cleanarchitecture.validations;
 
 import com.cleanarchitecture.entities.Phone;
 import org.junit.jupiter.api.Test;
@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class PhoneTest {
+class PhoneValidationTest {
 
     private static final String DDD_VALID = "19";
     private static final String NUMBER_VALID = "91313336";
