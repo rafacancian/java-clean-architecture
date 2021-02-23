@@ -1,5 +1,6 @@
 package com.cleanarchitecture.models;
 
+import com.cleanarchitecture.entities.Phone;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -13,23 +14,24 @@ class PhoneTest {
 
     @Test
     void shouldNotCreatePhoneWithDDDsInvalid() {
-        assertThrows(IllegalArgumentException.class, () -> new Phone(null, NUMBER_VALID));
-        assertThrows(IllegalArgumentException.class, () -> new Phone("", NUMBER_VALID));
-        assertThrows(IllegalArgumentException.class, () -> new Phone("1", NUMBER_VALID));
+        assertThrows(IllegalArgumentException.class, () -> Phone.builder().ddd(null).number(NUMBER_VALID).build());
+        assertThrows(IllegalArgumentException.class, () -> Phone.builder().ddd("").number(NUMBER_VALID).build());
+        assertThrows(IllegalArgumentException.class, () -> Phone.builder().ddd("1").number(NUMBER_VALID).build());
     }
 
     @Test
     void shouldNotCreatePhoneWithNumberInvalid() {
-        assertThrows(IllegalArgumentException.class, () -> new Phone(DDD_VALID, null));
-        assertThrows(IllegalArgumentException.class, () -> new Phone(DDD_VALID, ""));
-        assertThrows(IllegalArgumentException.class, () -> new Phone(DDD_VALID, "111233"));
+        assertThrows(IllegalArgumentException.class, () -> Phone.builder().ddd(DDD_VALID).number(null).build());
+        assertThrows(IllegalArgumentException.class, () -> Phone.builder().ddd(DDD_VALID).number("").build());
+        assertThrows(IllegalArgumentException.class, () -> Phone.builder().ddd(DDD_VALID).number("11223").build());
     }
 
     @Test
     void shouldCreatePhoneWithDDDsAndNumberValid() {
-        Phone phone = new Phone(DDD_VALID, NUMBER_VALID);
+        Phone phone = Phone.builder().ddd(DDD_VALID).number(NUMBER_VALID).build();
         assertEquals(phone.getDdd(), DDD_VALID);
         assertEquals(phone.getNumber(), NUMBER_VALID);
     }
+
 
 }

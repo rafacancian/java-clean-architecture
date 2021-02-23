@@ -1,12 +1,11 @@
 package com.cleanarchitecture.models;
 
-import lombok.Builder;
+import com.cleanarchitecture.entities.Student;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
 
 @Getter
-@Builder
 public class Indication {
 
     private Student indicated;

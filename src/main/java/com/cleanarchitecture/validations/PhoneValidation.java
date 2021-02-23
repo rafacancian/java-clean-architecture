@@ -1,17 +1,12 @@
-package com.cleanarchitecture.models;
+package com.cleanarchitecture.validations;
 
-import lombok.Builder;
-import lombok.Getter;
+import org.springframework.util.ObjectUtils;
 
-@Getter
-@Builder
-public class Phone {
+public class PhoneValidation {
 
-    private String ddd;
-    private String number;
+    public static void execute(String ddd, String number) {
 
-    public Phone(String ddd, String number) {
-        if (ddd == null || number == null) {
+        if (ObjectUtils.isEmpty(ddd) || ObjectUtils.isEmpty(number)) {
             throw new IllegalArgumentException("DDD and number are require");
         }
 
@@ -22,8 +17,5 @@ public class Phone {
         if (!number.matches("\\d{8}|\\d{9}")) {
             throw new IllegalArgumentException("Invalid Number");
         }
-        this.ddd = ddd;
-        this.number = number;
     }
-
 }

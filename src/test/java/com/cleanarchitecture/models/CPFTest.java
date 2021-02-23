@@ -1,9 +1,10 @@
 package com.cleanarchitecture.models;
 
+import com.cleanarchitecture.validations.CpfValidation;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class CPFTest {
@@ -11,25 +12,23 @@ class CPFTest {
     @Test
     void shouldNotCreateCPFWithInvalidNumber() {
         // Must me replace for anonymous function
-        assertThrows(IllegalArgumentException.class, createCPF(""));
-        assertThrows(IllegalArgumentException.class, () -> new CPF("111.111.1"));
-        assertThrows(IllegalArgumentException.class, () -> new CPF(null));
+        assertThrows(IllegalArgumentException.class, () -> execute(""));
+        assertThrows(IllegalArgumentException.class, () -> CpfValidation.execute("111.111.1"));
+        assertThrows(IllegalArgumentException.class, () -> CpfValidation.execute(null));
     }
 
     @Test
     void shouldCreateCPFWithValidNumber() {
-        String cpfValido = "111.111.111-11";
-        CPF cpf = new CPF(cpfValido);
-        assertEquals(cpf.getNumber(), cpfValido);
-
+        String cpfValid = "111.111.111-11";
+        assertDoesNotThrow(() -> CpfValidation.execute(cpfValid));
     }
 
     //Just for example
-    private Executable createCPF(String cpf) {
+    private Executable execute(String cpf) {
         return new Executable() {
             @Override
             public void execute() throws Throwable {
-                new CPF(cpf);
+                CpfValidation.execute(cpf);
             }
         };
     }

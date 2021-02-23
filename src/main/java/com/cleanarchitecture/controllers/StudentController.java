@@ -2,7 +2,7 @@ package com.cleanarchitecture.controllers;
 
 import com.cleanarchitecture.adapters.StudentAdapter;
 import com.cleanarchitecture.dtos.StudentDTO;
-import com.cleanarchitecture.models.Student;
+import com.cleanarchitecture.entities.Student;
 import com.cleanarchitecture.usecases.StudentUseCase;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;

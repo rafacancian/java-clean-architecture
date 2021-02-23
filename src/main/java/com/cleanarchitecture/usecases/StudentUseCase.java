@@ -1,19 +1,23 @@
 package com.cleanarchitecture.usecases;
 
-import com.cleanarchitecture.models.Student;
+import com.cleanarchitecture.entities.Student;
+import com.cleanarchitecture.repositories.StudentRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class StudentUseCase {
 
+    private StudentRepository studentRepository;
+
     public Student create(Student student) {
-        return Student.builder().build();
+        return studentRepository.save(student);
     }
 
     public List<Student> findAll() {
-        return Collections.singletonList(Student.builder().build());
+        return studentRepository.findAll();
     }
 }
