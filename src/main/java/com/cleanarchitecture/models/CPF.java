@@ -1,8 +1,10 @@
 package com.cleanarchitecture.models;
 
+import lombok.Builder;
 import lombok.Getter;
 
 @Getter
+@Builder
 public class CPF {
 
     private String number;
