@@ -17,7 +17,7 @@ class EmailValidationTest {
     @Test
     void shouldCreateEmailWithValidAddress() {
         String emailValid = "rafael.mock@example.com";
-        assertDoesNotThrow(() -> CpfValidation.execute(emailValid));
+        assertDoesNotThrow(() -> EmailValidation.execute(emailValid));
     }
 
 }

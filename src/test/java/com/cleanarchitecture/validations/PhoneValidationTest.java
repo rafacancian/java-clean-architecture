@@ -1,9 +1,8 @@
 package com.cleanarchitecture.validations;
 
-import com.cleanarchitecture.entities.Phone;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class PhoneValidationTest {
@@ -14,24 +13,20 @@ class PhoneValidationTest {
 
     @Test
     void shouldNotCreatePhoneWithDDDsInvalid() {
-        assertThrows(IllegalArgumentException.class, () -> Phone.builder().ddd(null).number(NUMBER_VALID).build());
-        assertThrows(IllegalArgumentException.class, () -> Phone.builder().ddd("").number(NUMBER_VALID).build());
-        assertThrows(IllegalArgumentException.class, () -> Phone.builder().ddd("1").number(NUMBER_VALID).build());
+        assertThrows(IllegalArgumentException.class, () -> PhoneValidation.execute(null, NUMBER_VALID));
+        assertThrows(IllegalArgumentException.class, () -> PhoneValidation.execute("", NUMBER_VALID));
+        assertThrows(IllegalArgumentException.class, () -> PhoneValidation.execute("1", NUMBER_VALID));
     }
 
     @Test
     void shouldNotCreatePhoneWithNumberInvalid() {
-        assertThrows(IllegalArgumentException.class, () -> Phone.builder().ddd(DDD_VALID).number(null).build());
-        assertThrows(IllegalArgumentException.class, () -> Phone.builder().ddd(DDD_VALID).number("").build());
-        assertThrows(IllegalArgumentException.class, () -> Phone.builder().ddd(DDD_VALID).number("11223").build());
+        assertThrows(IllegalArgumentException.class, () -> PhoneValidation.execute(DDD_VALID, null));
+        assertThrows(IllegalArgumentException.class, () -> PhoneValidation.execute(DDD_VALID, ""));
+        assertThrows(IllegalArgumentException.class, () -> PhoneValidation.execute(DDD_VALID, "11223"));
     }
 
     @Test
     void shouldCreatePhoneWithDDDsAndNumberValid() {
-        Phone phone = Phone.builder().ddd(DDD_VALID).number(NUMBER_VALID).build();
-        assertEquals(phone.getDdd(), DDD_VALID);
-        assertEquals(phone.getNumber(), NUMBER_VALID);
+        assertDoesNotThrow(() -> PhoneValidation.execute(DDD_VALID, NUMBER_VALID));
     }
-
-
 }
