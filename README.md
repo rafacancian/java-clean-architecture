@@ -31,6 +31,6 @@ increase clarity of how components fit into your system.
 > This is where you'll be asserting how the system should work from a technical point of view. 
 > This would be the layer in which you would apply your dependency injection to wire up your code.
 
-##Fonts
+## Fonts
 http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
 https://jameslouiecs.blogspot.com/2018/11/uncle-bobs-clean-architecture.html
