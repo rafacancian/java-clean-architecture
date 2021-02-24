@@ -1,7 +1,7 @@
 package com.cleanarchitecture.usecases;
 
 import com.cleanarchitecture.entities.Student;
-import com.cleanarchitecture.repositories.StudentRepository;
+import com.cleanarchitecture.gateways.StudentGateway;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
@@ -13,14 +13,14 @@ import java.util.List;
 @AllArgsConstructor
 public class StudentUseCase {
 
-    private StudentRepository studentRepository;
+    private StudentGateway studentGateway;
 
     public Student create(Student student) {
-        return studentRepository.save(student);
+        return studentGateway.create(student);
     }
 
     public List<Student> findAll() {
-        List<Student> students = studentRepository.findAll();
+        List<Student> students = studentGateway.findAll();
         if (ObjectUtils.isEmpty(students)) {
             throw new EntityNotFoundException("Students not found");
         }
