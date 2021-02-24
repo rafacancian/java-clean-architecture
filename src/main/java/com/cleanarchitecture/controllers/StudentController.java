@@ -5,6 +5,7 @@ import com.cleanarchitecture.dtos.StudentDTO;
 import com.cleanarchitecture.entities.Student;
 import com.cleanarchitecture.usecases.StudentUseCase;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,12 +21,12 @@ public class StudentController {
     @GetMapping
     public ResponseEntity<List<Student>> findAll() {
         List<Student> students = studentUseCase.findAll();
-        return ResponseEntity.ok(students);
+        return ResponseEntity.status(HttpStatus.OK).body(students);
     }
 
     @PostMapping
     public ResponseEntity<Student> create(@RequestBody StudentDTO studentDTO) {
         Student student = studentUseCase.create(StudentAdapter.ToModel(studentDTO));
-        return ResponseEntity.ok(student);
+        return ResponseEntity.status(HttpStatus.CREATED).body(student);
     }
 }

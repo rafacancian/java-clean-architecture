@@ -2,7 +2,7 @@ package com.cleanarchitecture.fixtures;
 
 import com.cleanarchitecture.dtos.StudentDTO;
 
-import java.util.Collections;
+import java.util.Arrays;
 
 public class StudentDTOFixture {
     public static StudentDTO createBasic() {
@@ -10,7 +10,7 @@ public class StudentDTOFixture {
                 .name("Rafael Mock")
                 .cpf("381.111.543-43")
                 .email("rafael.mock@example.com")
-                .phones(Collections.singletonList(PhoneDTOFixture.createBasic()))
+                .phones(Arrays.asList(PhoneDTOFixture.createBasic()))
                 .build();
     }
 }

@@ -1,12 +1,16 @@
 package com.cleanarchitecture.dtos;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
-@Getter
+@Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class PhoneDTO implements Serializable {
     private String ddd;
     private String number;

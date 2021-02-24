@@ -4,7 +4,9 @@ import com.cleanarchitecture.entities.Student;
 import com.cleanarchitecture.repositories.StudentRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ObjectUtils;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
 @Service
@@ -18,6 +20,10 @@ public class StudentUseCase {
     }
 
     public List<Student> findAll() {
-        return studentRepository.findAll();
+        List<Student> students = studentRepository.findAll();
+        if (ObjectUtils.isEmpty(students)) {
+            throw new EntityNotFoundException("Students not found");
+        }
+        return students;
     }
 }
