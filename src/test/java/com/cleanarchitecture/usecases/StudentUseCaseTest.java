@@ -1,8 +1,8 @@
 package com.cleanarchitecture.usecases;
 
+import com.cleanarchitecture.external.gateways.StudentGateway;
+import com.cleanarchitecture.external.gateways.StudentGatewayImpl;
 import com.cleanarchitecture.fixtures.StudentFixture;
-import com.cleanarchitecture.gateways.StudentGateway;
-import com.cleanarchitecture.gateways.StudentGatewayImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

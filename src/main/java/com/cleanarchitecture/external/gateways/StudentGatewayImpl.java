@@ -1,7 +1,7 @@
-package com.cleanarchitecture.gateways;
+package com.cleanarchitecture.external.gateways;
 
 import com.cleanarchitecture.entities.Student;
-import com.cleanarchitecture.repositories.StudentRepository;
+import com.cleanarchitecture.external.repositories.StudentRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

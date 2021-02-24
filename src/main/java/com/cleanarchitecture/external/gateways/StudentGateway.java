@@ -1,4 +1,4 @@
-package com.cleanarchitecture.gateways;
+package com.cleanarchitecture.external.gateways;
 
 import com.cleanarchitecture.entities.Student;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
 package com.cleanarchitecture.usecases;
 
 import com.cleanarchitecture.entities.Student;
-import com.cleanarchitecture.gateways.StudentGateway;
+import com.cleanarchitecture.external.gateways.StudentGateway;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;

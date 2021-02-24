@@ -1,4 +1,4 @@
-package com.cleanarchitecture.repositories;
+package com.cleanarchitecture.external.repositories;
 
 import com.cleanarchitecture.entities.Student;
 import org.springframework.data.jpa.repository.JpaRepository;

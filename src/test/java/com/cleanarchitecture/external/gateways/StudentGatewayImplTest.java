@@ -1,7 +1,7 @@
-package com.cleanarchitecture.gateways;
+package com.cleanarchitecture.external.gateways;
 
+import com.cleanarchitecture.external.repositories.StudentRepository;
 import com.cleanarchitecture.fixtures.StudentFixture;
-import com.cleanarchitecture.repositories.StudentRepository;
 import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
