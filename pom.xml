@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com</groupId>
-    <artifactId>clean-architecture</artifactId>
+    <artifactId>java-clean-architecture</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>clean.architecture</name>
     <description>Java project create to implement the clean architecture</description>
